@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  AdminGroup:
+    Type: "AWS::IAM::Group"
+    Properties:
+      GroupName: "AdminGroup"
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/AdministratorAccess"
+
+  AdminUser1:
+    Type: "AWS::IAM::User"
+    Properties:
+      UserName: "AdminUser1"
+      Groups:
+        - !Ref AdminGroup
+      LoginProfile:
+        Password: "]IIJ,6KSAox48cH."  # Set your complex password here
+        PasswordResetRequired: true
+
+  AdminUser2:
+    Type: "AWS::IAM::User"
+    Properties:
+      UserName: "AdminUser2"
+      Groups:
+        - !Ref AdminGroup
+      LoginProfile:
+        Password: "Du5Qaug'TQ11()@g"  # Set your complex password here
+        PasswordResetRequired: true
+
+  AdminUser3:
+    Type: "AWS::IAM::User"
+    Properties:
+      UserName: "AdminUser3"
+      Groups:
+        - !Ref AdminGroup
+      LoginProfile:
+        Password: "p'FK!I}KTwaF_fTG"  # Set your complex password here
+        PasswordResetRequired: true
